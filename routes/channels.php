@@ -1,5 +1,6 @@
 <?php
 
+use App\Broadcasting\ArticleChannel;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
