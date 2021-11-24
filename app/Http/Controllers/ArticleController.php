@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ArticleCreate;
+use App\Events\Message;
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -14,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
@@ -24,18 +27,14 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        dd(__METHOD__);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
+        return response()->json([
+            Article::create($request->all())
+        ]);
     }
 
     /**
